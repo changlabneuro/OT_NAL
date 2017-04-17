@@ -1,29 +1,8 @@
 %%  load
 
-eyes = load( 'eye_roi_8_blocks_processed' );
-image = load( 'image_roi_8_blocks_processed' );
-
-fs = fieldnames( eyes );
-eyes = eyes.(fs{1});
-fs = fieldnames( image );
-image = image.(fs{1});
-
-image = image.to_container();
-image = image.sparse();
-eyes = eyes.to_container();
-eyes = eyes.sparse();
-
-eyes = eyes.add_field( 'rois', 'eyes' );
-image = image.add_field( 'rois', 'image' );
-combined = eyes.append( image );
-
-%%  pre process
-
-use = combined;
-use = use.only( {'monkeys', 'people'} );
-use = use.rm( 'block_1' );
-use = use.keep( use.data ~= 0 );
-% use = use.collapse( 'blocks' );
+addpath( genpath('./depends') );
+addpath( genpath('./data') );
+load( 'raw_container.mat' );
 
 %%  normalize
 
