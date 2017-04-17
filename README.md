@@ -4,7 +4,7 @@ Analysis and plotting codes used in **Oxytocin under opioid antagonism leads to 
 
 ## Organization
 
-- Data are located in the `data` folder. `raw.mat` contains trial-by-trial fixation frequencies as `raw.data`, and labels in `data.labels` which identify each trial’s parameters (e.g., the category of image). `raw_container.mat` reformats this struct into a `Container`, which is a Matlab object / data structure that makes creating subsets of trials a bit easier. `means.mat` and `standard_errors.mat` contain the means and standard errors as plotted (and per subject / session).
+- Data are located in the `data` folder. `raw.mat` contains trial-by-trial fixation frequencies as `raw.data`, and labels in `raw.labels` which identify each trial’s parameters (e.g., the category of image). `raw_container.mat` reformats this struct into a `Container`, which is a Matlab object / data structure that makes creating subsets of trials a bit easier. `means.mat` and `standard_errors.mat` contain the means and standard errors as plotted (and per subject / session).
 
 - The object file and associated dependencies of `Container` are stored in `depends`.
 
